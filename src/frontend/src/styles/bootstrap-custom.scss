@@ -1,0 +1,92 @@
+/* src/frontend/src/styles/bootstrap-custom.scss */
+@import 'bootstrap/scss/bootstrap';
+
+// Definir variables personalizadas
+// Colores de la paleta
+$blue:    #0d6efd;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #198754;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+
+$primary:       $blue;
+$secondary:     #6c757d;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         #f8f9fa;
+$dark:          #212529;
+
+// Opcional: Bordes
+$border-radius: 0.5rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 1rem;
+
+// Definir variables personalizadas
+$primary: #007bff; // Color azul para el botón principal
+$font-family-sans-serif: 'Roboto', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; // Ejemplo de tipografía
+$headings-font-weight: 700; // Grosor para los títulos (por ejemplo, el brand)
+
+//1. Navigation
+// Estilos para la barra de navegación
+.navbar {
+  .navbar-brand {
+    font-weight: $headings-font-weight;
+    font-size: 1.5rem; // Tamaño de fuente del logo
+    &:hover {
+      color: $primary; // Cambia de color al pasar el mouse
+    }
+  }
+
+  .nav-link {
+    font-family: $font-family-sans-serif; // Aplica la tipografía definida
+    font-weight: 500; // Grosor de las letras en los enlaces
+    color: #000000; // Color de los enlaces
+    &:hover {
+      color: $primary; // Cambia de color al pasar el mouse
+    }
+  }
+}
+
+// 2. Hero Banner
+ .hero-banner-container {
+  height: 60vh;
+  min-height: 600px;
+  overflow: hidden;
+  .hero-banner-image {
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  cursor: pointer; // Opcional: añade un cursor de mano para indicar que es interactivo
+  // Estilo para el efecto hover
+  &:hover {
+    color: $warning; // O el color que desees, por ejemplo, #007bff
+  }
+}
+
+p.lead {
+  color: $warning; // El color de Bootstrap 'warning' o el color exacto que desees
+  margin-top: 2rem;
+}
+
+.hero-banner-content p.lead {
+  font-family: 'Open Sans', sans-serif; // O la fuente que prefieras
+  font-weight: 700;
+}
+
+//3. BenefitsSection
+
+//pantalla de registro
+
