@@ -1,61 +1,53 @@
 /* src/frontend/src/styles/bootstrap-custom.scss */
-@import 'bootstrap/scss/bootstrap';
+// 1. IMPORTACIÓN DE BOOTSTRAP
+// Se importa Bootstrap al principio para que sus funciones y mixins (como `darken()`)
+// estén disponibles para los estilos personalizados.
+// Para sobreescribir las variables de Bootstrap, defínelas ANTES de esta línea.
+@import "bootstrap/scss/bootstrap";
 
-// Definir variables personalizadas
-// Colores de la paleta
-$blue:    #0d6efd;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #d63384;
-$red:     #dc3545;
-$orange:  #fd7e14;
-$yellow:  #ffc107;
-$green:   #198754;
-$teal:    #20c997;
-$cyan:    #0dcaf0;
+// 2. VARIABLES PERSONALIZADAS
+// Estas son las variables que se usan en los estilos de más abajo.
 
-$primary:       $blue;
-$secondary:     #6c757d;
-$success:       $green;
-$info:          $cyan;
-$warning:       $yellow;
-$danger:        $red;
-$light:         #f8f9fa;
-$dark:          #212529;
+// Colores personalizados
+$primary: #007bff; // Usado en la barra de navegación.
+$warning: #ffc107; // Usado en el hero banner.
 
-// Opcional: Bordes
-$border-radius: 0.5rem;
-$border-radius-sm: 0.25rem;
-$border-radius-lg: 1rem;
+// Tipografía
+$font-family-sans-serif: "Roboto", system-ui, -apple-system, "Segoe UI",
+  "Helvetica Neue", Arial, sans-serif;
+$headings-font-weight: 700; // Usado en el brand de la navegación.
 
-// Definir variables personalizadas
-$primary: #007bff; // Color azul para el botón principal
-$font-family-sans-serif: 'Roboto', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; // Ejemplo de tipografía
-$headings-font-weight: 700; // Grosor para los títulos (por ejemplo, el brand)
+// Variables para el Sidebar del Dashboard
+$sidebar-bg: #2c3e50;
+$sidebar-text-color: #ffffff;
+$sidebar-item-padding: 1rem;
+$sidebar-item-margin: 0.5rem;
+$sidebar-border-radius: 0.375rem;
 
-//1. Navigation
-// Estilos para la barra de navegación
+// 3. ESTILOS PERSONALIZADOS
+
+//1. Estilos para la barra de navegación (Navigation)
 .navbar {
   .navbar-brand {
     font-weight: $headings-font-weight;
-    font-size: 1.5rem; // Tamaño de fuente del logo
+    font-size: 1.5rem;
     &:hover {
-      color: $primary; // Cambia de color al pasar el mouse
+      color: $primary;
     }
   }
 
   .nav-link {
-    font-family: $font-family-sans-serif; // Aplica la tipografía definida
-    font-weight: 500; // Grosor de las letras en los enlaces
-    color: #000000; // Color de los enlaces
+    font-family: $font-family-sans-serif;
+    font-weight: 500;
+    color: #000000;
     &:hover {
-      color: $primary; // Cambia de color al pasar el mouse
+      color: $primary;
     }
   }
 }
 
-// 2. Hero Banner
- .hero-banner-container {
+//2. Estilos para el Hero Banner
+.hero-banner-container {
   height: 60vh;
   min-height: 600px;
   overflow: hidden;
@@ -63,30 +55,57 @@ $headings-font-weight: 700; // Grosor para los títulos (por ejemplo, el brand)
     object-fit: cover;
     filter: brightness(0.7);
   }
-
 }
+
 h1 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  cursor: pointer; // Opcional: añade un cursor de mano para indicar que es interactivo
-  // Estilo para el efecto hover
+  cursor: pointer;
   &:hover {
-    color: $warning; // O el color que desees, por ejemplo, #007bff
+    color: $warning;
   }
 }
 
 p.lead {
-  color: $warning; // El color de Bootstrap 'warning' o el color exacto que desees
+  color: $warning;
   margin-top: 2rem;
 }
 
 .hero-banner-content p.lead {
-  font-family: 'Open Sans', sans-serif; // O la fuente que prefieras
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
 }
 
-//3. BenefitsSection
+//3 Estilos para el Sidebar del Dashboard
+.sidebar {
+  height: 100vh;
+  background-color: $sidebar-bg;
+  padding: $sidebar-item-padding;
 
-//pantalla de registro
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
+.sidebar-item {
+  display: block;
+  color: $sidebar-text-color;
+  margin-bottom: $sidebar-item-margin;
+  padding: $sidebar-item-padding;
+  border-radius: $sidebar-border-radius;
+  text-decoration: none;
+
+  // Efecto hover
+  &:hover {
+    background-color: darken($sidebar-bg, 5%);
+    color: $sidebar-text-color;
+    text-decoration: none;
+  }
+
+  // Iconos
+  i {
+    margin-right: 0.5rem;
+  }
+}
