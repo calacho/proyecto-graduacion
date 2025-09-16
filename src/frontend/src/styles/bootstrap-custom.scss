@@ -67,36 +67,24 @@ $sidebar-border-radius: 0.375rem;
 }
 
 // --- Hero Banner ---
-.hero-banner-container {
-  height: 60vh;
-  min-height: 600px;
-  overflow: hidden;
-
-  .hero-banner-image {
-    object-fit: cover;
-    filter: brightness(0.7);
-  }
+/* Footer personalizado */
+.footer-custom {
+  color: #007bff;
 }
-
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  cursor: pointer;
-
-  &:hover {
-    color: $warning;
-  }
+.footer-custom .nav-link {
+  color: #007bff;
+  min-width: 160px; /* equivalente a min-w-40 */
 }
-
-p.lead {
-  color: $warning;
-  margin-top: 2rem;
+.footer-custom .nav-link:hover {
+  text-decoration: underline;
 }
-
-.hero-banner-content p.lead {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
+.footer-custom .social-icon {
+  color: #47569e;
+  transition: opacity 0.3s ease;
+  font-size: 1.5rem; /* tamaño de icono */
+}
+.footer-custom .social-icon:hover {
+  opacity: 0.75;
 }
 
 // --- Sidebar Dashboard ---
