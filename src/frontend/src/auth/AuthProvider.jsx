@@ -1,3 +1,4 @@
+//src/frontend/src/auth/AuthProvider.js
 import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext({
@@ -44,7 +45,8 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, token, login, logout }}>
+    <AuthContext.Provider
+      value={{ isAuthenticated, user, token, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
