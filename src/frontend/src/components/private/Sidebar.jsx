@@ -1,8 +1,17 @@
 // src/components/private/Sidebar.jsx
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../auth/AuthProvider";   // 👈 importa el hook
+import { useNavigate } from "react-router-dom";  
 
 const Sidebar = () => {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login"); // 👈 redirigir al login después de cerrar sesión
+  };
   return (
     <nav className="sidebar d-flex flex-column">
       <div className="sidebar-header p-4">
@@ -25,7 +34,7 @@ const Sidebar = () => {
 
         <li className="nav-item">
           <NavLink
-            to="/registro"
+            to="/patientregistration"
             className={({ isActive }) =>
               `nav-link ${isActive ? "active" : ""}`
             }>
@@ -69,12 +78,14 @@ const Sidebar = () => {
       </ul>
 
       <div className="mt-auto p-3">
-        <NavLink
-          to="/logout"
-          className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+        {/* Botón logout con estilo de nav-link */}
+        <button
+          className="nav-link text-danger border-0 bg-transparent"
+          onClick={handleLogout}
+        >
           <i className="bi bi-box-arrow-right me-2"></i>
           Cerrar Sesión
-        </NavLink>
+        </button>
       </div>
     </nav>
   );
