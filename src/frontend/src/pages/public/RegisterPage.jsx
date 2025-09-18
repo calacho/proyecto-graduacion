@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+//src/frontend/src/pages/public/RegisterPage.js
+>>>>>>> companero/develop
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "../../auth/AuthProvider";
@@ -53,7 +57,11 @@ function RegisterPage() {
       if (response.ok) {
         setSuccess(true);
         // ✅ Opcional: podrías loguear directamente después de registrarse
+<<<<<<< HEAD
         // auth.login({ id_usuario: data.id_usuario, correo: email, rol: "medico" }, ""); 
+=======
+        // auth.login({ id_usuario: data.id_usuario, correo: email, rol: "medico" }, "");
+>>>>>>> companero/develop
         // Pero mejor dejamos que vaya al login.
       } else {
         setError(data.msg || "Error al registrar usuario");
@@ -179,8 +187,12 @@ function RegisterPage() {
                 <button
                   type="submit"
                   className="btn btn-primary btn-lg w-100"
+<<<<<<< HEAD
                   disabled={!canSubmit || submitting}
                 >
+=======
+                  disabled={!canSubmit || submitting}>
+>>>>>>> companero/develop
                   {submitting ? "Registrando..." : "Registrarse"}
                 </button>
 

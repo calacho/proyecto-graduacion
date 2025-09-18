@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+//src/frontend/src/pages/public/LoginPage.js
+>>>>>>> companero/develop
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "../../auth/AuthProvider";
@@ -29,6 +33,7 @@ function LoginPage() {
       const data = await response.json();
 
       if (response.ok) {
+<<<<<<< HEAD
         const usuario = data.usuario;
         // Aseguramos que incluya nombres y apellidos
         auth.login({
@@ -38,6 +43,9 @@ function LoginPage() {
           correo: usuario.correo,
           rol: usuario.rol
         }, data.access_token);
+=======
+        auth.login(data.usuario, data.access_token);
+>>>>>>> companero/develop
       } else {
         setError(data.msg || "Error en el login");
       }
@@ -56,7 +64,13 @@ function LoginPage() {
       {/* Tabs */}
       <ul className="nav nav-tabs mb-4">
         <li className="nav-item">
+<<<<<<< HEAD
           <Link className="nav-link" to="/register">Registro</Link>
+=======
+          <Link className="nav-link" to="/register">
+            Registro
+          </Link>
+>>>>>>> companero/develop
         </li>
         <li className="nav-item">
           <span className="nav-link active">Inicio de Sesión</span>
@@ -95,7 +109,13 @@ function LoginPage() {
                     onChange={(e) => setPass(e.target.value)}
                     required
                   />
+<<<<<<< HEAD
                   <label htmlFor="password" className="text-muted">Contraseña</label>
+=======
+                  <label htmlFor="password" className="text-muted">
+                    Contraseña
+                  </label>
+>>>>>>> companero/develop
                 </div>
 
                 {error && <div className="alert alert-danger">{error}</div>}
@@ -104,15 +124,25 @@ function LoginPage() {
                 <button
                   type="submit"
                   className="btn btn-primary btn-lg w-100"
+<<<<<<< HEAD
                   disabled={loading}
                 >
+=======
+                  disabled={loading}>
+>>>>>>> companero/develop
                   {loading ? "Ingresando..." : "Iniciar Sesión"}
                 </button>
 
                 {/* Registro link */}
                 <p className="text-center mt-4 mb-0">
                   ¿No tienes una cuenta?{" "}
+<<<<<<< HEAD
                   <Link to="/register" className="text-decoration-none">Regístrate</Link>
+=======
+                  <Link to="/register" className="text-decoration-none">
+                    Regístrate
+                  </Link>
+>>>>>>> companero/develop
                 </p>
               </form>
             </div>

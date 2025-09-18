@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+//src/frontend/src/auth/AuthProvider.js
+>>>>>>> companero/develop
 import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext({
@@ -6,13 +10,17 @@ const AuthContext = createContext({
   token: null,
   login: () => {},
   logout: () => {},
+<<<<<<< HEAD
   loading: true, // 👈 nuevo estado
+=======
+>>>>>>> companero/develop
 });
 
 export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
+<<<<<<< HEAD
   const [loading, setLoading] = useState(true); // 👈 inicia en "cargando"
 
   // Recuperar sesión al iniciar
@@ -40,6 +48,18 @@ export function AuthProvider({ children }) {
         .finally(() => setLoading(false)); // 👈 terminamos de verificar
     } else {
       setLoading(false);
+=======
+
+  // Al iniciar, cargar desde localStorage si ya estaba logueado
+  useEffect(() => {
+    const savedToken = localStorage.getItem("token");
+    const savedUser = localStorage.getItem("user");
+
+    if (savedToken && savedUser) {
+      setToken(savedToken);
+      setUser(JSON.parse(savedUser));
+      setIsAuthenticated(true);
+>>>>>>> companero/develop
     }
   }, []);
 
@@ -63,8 +83,12 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
+<<<<<<< HEAD
       value={{ isAuthenticated, user, token, login, logout, loading }}
     >
+=======
+      value={{ isAuthenticated, user, token, login, logout }}>
+>>>>>>> companero/develop
       {children}
     </AuthContext.Provider>
   );
