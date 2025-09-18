@@ -45,6 +45,17 @@ const Sidebar = () => {
 
         <li className="nav-item">
           <NavLink
+            to="/patients"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+          >
+            <i className="bi bi-people-fill me-2"></i>
+            Lista de Pacientes
+          </NavLink>
+        </li>
+
+
+        <li className="nav-item">
+          <NavLink
             to="/analisis"
             className={({ isActive }) =>
               `nav-link ${isActive ? "active" : ""}`

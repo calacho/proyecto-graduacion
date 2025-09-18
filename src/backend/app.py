@@ -16,6 +16,13 @@ def create_app():
     from routes.auth import auth_bp
     app.register_blueprint(auth_bp, url_prefix="/auth")
 
+    from routes.patients import patients_bp
+    app.register_blueprint(patients_bp, url_prefix="/api")
+
+    from routes.geo import geo_bp
+    app.register_blueprint(geo_bp, url_prefix="/api")
+
+
     @app.route("/")
     def home():
         return {"msg": "API Flask funcionando 🚀"}

@@ -16,6 +16,9 @@ import LoginPage from "./pages/public/LoginPage"
 import DashboardPage from "./pages/private/DashboardPage";
 import ProtectedRoute from "./pages/private/ProtectedRoute";
 import RegisterPage from "./pages/public/RegisterPage";
+import PatientRegistration from "./pages/private/PatientRegistration";
+import PatientList from "./pages/private/PatientList";
+
 
 function App() {
   return (
@@ -34,6 +37,8 @@ function App() {
       {/*<Route element={<PrivateLayout />}>*/}
       <Route element={<ProtectedRoute allowedRoles={["medico"]} />}>
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/patientregistration" element={<PatientRegistration />} />
+        <Route path="/patients" element={<PatientList />} />
       </Route>
 
       {/* Ruta 404 */}
